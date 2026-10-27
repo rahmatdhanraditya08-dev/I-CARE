@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "I-Care: dev",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "dev", "--", "--host", "127.0.0.1"],
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "I-Care: build",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "build"],
+      "group": "build",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "I-Care: test",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["test"],
+      "problemMatcher": []
+    },
+    {
+      "label": "I-Care: deploy Worker",
+      "type": "shell",
+      "command": "npm.cmd",
+      "args": ["run", "deploy:worker"],
+      "problemMatcher": ["$tsc"]
+    }
+  ]
+}
