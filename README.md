@@ -33,6 +33,10 @@ Saat diminta, masukkan username dan password langsung di terminal Cloudflare; ke
 
 **Penting:** jangan aktifkan GitHub Pages untuk repo ini. URL GitHub Pages langsung akan melewati login Worker. Source code boleh berada di repo publik; asset dashboard hanya disajikan dari Worker setelah autentikasi. Jika GitHub Pages pernah diaktifkan, matikan di **Settings → Pages** sebelum membagikan URL Worker.
 
+## GitHub Pages publik
+
+Workflow `.github/workflows/pages.yml` membangun dan menerbitkan `dist/` setiap ada push ke `main`. Untuk menggunakannya, buka **Settings → Pages → Build and deployment**, lalu pilih **GitHub Actions** sebagai source. Situs di `https://rahmatdhanraditya08-dev.github.io/I-CARE/` bersifat publik dan melewati login Worker; gunakan Worker untuk URL yang meminta username/password.
+
 Pada PowerShell Windows, gunakan `npm.cmd` dan `npx.cmd` seperti contoh. Untuk mengubah kredensial nanti, jalankan lagi `npx.cmd wrangler secret put IC_USERNAME` atau `npx.cmd wrangler secret put IC_PASSWORD`, lalu deploy ulang.
 
 Untuk mencoba Worker lokal, salin `.dev.vars.example` menjadi `.dev.vars`, isi nilai uji lokal, lalu jalankan `npm.cmd run worker:dev`. File `.dev.vars` dikecualikan dari Git.
